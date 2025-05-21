@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto flex justify-between items-center cursor-pointer">
         <span
           onClick={() => navigate("/")}
-          className="text-2xl font-bold text-white cursor-pointer hover:text-purple-400 cursor-pointer"
+          className="text-2xl font-bold text-white cursor-pointer hover:text-purple-400"
         >
           AutoMailAI
         </span>
