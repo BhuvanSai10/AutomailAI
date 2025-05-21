@@ -17,7 +17,6 @@ const EmailSender = () => {
   const [scheduledTime, setScheduledTime] = useState("");
   const [regenLoading, setRegenLoading] = useState(false);
 
-  // Load state safely when component mounts
   useEffect(() => {
     if (location.state) {
       setSubject(location.state.subject || "");
@@ -96,7 +95,6 @@ const EmailSender = () => {
         });
 
         alert(result.message || "Email sent successfully!");
-        // navigate("/email-generator");
         navigate("/dashboard");
       }else {
         alert(result.message || "Failed to send email");

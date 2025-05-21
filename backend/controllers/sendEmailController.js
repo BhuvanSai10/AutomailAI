@@ -42,7 +42,6 @@ exports.sendEmail = async (req, res) => {
 
       return res.json({ message: "Email scheduled successfully" });
     } else {
-      // Send immediately
       await transporter.sendMail(mailOptions);
       return res.json({ message: "Email sent successfully" });
     }

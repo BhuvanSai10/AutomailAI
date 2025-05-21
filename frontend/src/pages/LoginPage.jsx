@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { setUser } from '../redux/userSlice'; // adjust path as needed
+import { setUser } from '../redux/userSlice'; 
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -26,16 +26,13 @@ const LoginPage = () => {
       });
 
       const data = await response.json();
-      console.log("Full login response:", data);
 
       if (response.ok) {
-        // Store in Redux
         dispatch(setUser({
           token: data.token,
           ...data.user
         }));
 
-        // Store token (optional)
         localStorage.setItem('token', data.token);
 
         alert(data.message || 'Login successful!');

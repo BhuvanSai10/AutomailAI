@@ -6,7 +6,7 @@ const emailSchema = new mongoose.Schema({
   subject: { type: String, required: true },
   message: { type: String, required: true },
   scheduledTime: { type: Date },
-  status: { type: String, default: "sent" }, // or "scheduled"
+  status: { type: String, default: "sent" },
   createdAt: { type: Date, default: Date.now }
 });
 

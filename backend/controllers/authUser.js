@@ -40,7 +40,6 @@ const signin = async (req, res) => {
 
     const token = jwt.sign({ userId: user._id, email: user.email }, 'your-secret-key', { expiresIn: '1h' });
 
-    // Include user info in response
     res.json({
       token,
       message: "Signin Successful",

@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const emailController = require('../controllers/emailController'); // Import the email controller
+const emailController = require('../controllers/emailController');
 
-// Define the route for generating emails
 router.post('/generate-email', emailController.generateEmail);
 
 module.exports = router;
