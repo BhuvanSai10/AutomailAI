@@ -92,7 +92,7 @@ const EmailGeneratorForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-lg shadow-lg"
+          className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white text-lg shadow-lg cursor-pointer"
         >
           {loading ? "Generating..." : "Generate Email"}
         </button>

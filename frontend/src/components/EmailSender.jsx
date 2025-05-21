@@ -83,9 +83,22 @@ const EmailSender = () => {
       const result = await res.json();
 
       if (res.ok) {
+        await fetch("http://localhost:5000/api/save-email", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            from: user.email,
+            to: recipient,
+            subject,
+            message,
+            scheduledTime: schedule ? new Date(scheduledTime).toISOString() : null,
+          }),
+        });
+
         alert(result.message || "Email sent successfully!");
-        navigate("/email-generator");
-      } else {
+        // navigate("/email-generator");
+        navigate("/dashboard");
+      }else {
         alert(result.message || "Failed to send email");
       }
     } catch (err) {
@@ -133,7 +146,7 @@ const EmailSender = () => {
         </div>
 
         <div className="space-y-2">
-          <label className="inline-flex items-center">
+          <label className="inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
               checked={schedule}
@@ -156,14 +169,14 @@ const EmailSender = () => {
           <button
             onClick={handleSend}
             disabled={!recipient}
-            className="bg-green-600 hover:bg-green-700 transition text-white py-3 px-6 rounded-xl shadow-md"
+            className="bg-green-600 hover:bg-green-700 transition text-white py-3 px-6 rounded-xl shadow-md cursor-pointer"
           >
             Send Email
           </button>
           <button
             onClick={regenerateEmail}
             disabled={regenLoading}
-            className="bg-blue-600 hover:bg-blue-700 transition text-white py-3 px-6 rounded-xl shadow-md"
+            className="bg-blue-600 hover:bg-blue-700 transition text-white py-3 px-6 rounded-xl shadow-md cursor-pointer"
           >
             {regenLoading ? "Regenerating..." : "Regenerate Email"}
           </button>

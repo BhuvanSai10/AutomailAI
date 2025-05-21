@@ -81,19 +81,19 @@ const LoginPage = () => {
         </div>
         <div className="space-y-4">
           <button
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-xl transition"
+            className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-xl transition cursor-pointer"
             onClick={handleLogin}
           >
             Login
           </button>
           <button
-            className="w-full bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-xl border border-gray-700"
+            className="w-full bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-xl border border-gray-700 cursor-pointer"
             onClick={() => navigate('/signup')}
           >
             Sign Up
           </button>
           <button
-            className="w-full bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-xl border border-gray-700"
+            className="w-full bg-gray-800 hover:bg-gray-700 text-white py-2 px-4 rounded-xl border border-gray-700 cursor-pointer"
             onClick={() => navigate('/')}
           >
             Back to Home

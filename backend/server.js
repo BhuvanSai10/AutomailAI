@@ -7,6 +7,8 @@ require('dotenv').config();
 const emailRoutes = require('./routes/emailRoutes'); 
 const authRoutes = require('./routes/authRoutes');
 const sendEmailRoutes = require("./routes/sendEmailRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes")
+
 const connectDB = require('./config/db.js');
 
 const app = express();
@@ -22,6 +24,7 @@ app.use(bodyParser.json());
 app.use('/api', emailRoutes);
 app.use('/api', authRoutes); 
 app.use("/api", sendEmailRoutes);
+app.use("/api", dashboardRoutes);
 
 // Start the server
 app.listen(port, () => {

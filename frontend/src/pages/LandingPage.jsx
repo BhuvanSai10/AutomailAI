@@ -6,28 +6,6 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-      <nav className="bg-gray-800/50 backdrop-blur-md py-4 px-6 border-b border-gray-700">
-        <div className="container mx-auto flex justify-between items-center">
-          <a href="/" className="text-2xl font-bold text-white">
-            AutoMailAI
-          </a>
-          <div className="flex items-center gap-4">
-            <button
-              onClick={() => navigate('/login')}
-              className="text-white hover:bg-gray-700/50 border border-gray-700 px-4 py-2 rounded-md items-center"
-            >
-              Login
-            </button>
-            <button
-              onClick={() => navigate('/signup')}
-              className="text-white hover:bg-gray-700/50 border border-gray-700 px-4 py-2 rounded-md items-center"
-            >
-              Sign Up
-            </button>
-          </div>
-        </div>
-      </nav>
-
       <main className="container mx-auto px-6 py-16 flex-grow flex flex-col items-center justify-center">
         <div className="text-center space-y-6 max-w-2xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -38,7 +16,7 @@ const LandingPage = () => {
           </p>
           <button
             onClick={() => navigate('/login')}
-            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-md hover:from-blue-600 hover:to-purple-600 shadow-lg text-lg"
+            className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-md hover:from-blue-600 hover:to-purple-600 shadow-lg text-lg cursor-pointer"
           >
             Get Started
           </button>
